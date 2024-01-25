@@ -6,16 +6,16 @@ import styles from "./App.module.css";
 function App() {
   const userExperience = {
     fontFamily: "'Inter', sans-serif",
-    heading: "Sweet",
+    heading: "Sweet Sweet Sweet Sweet Sweet Sweet",
     feature1: {
-      title: "Sugar Candy",
-      text: "Sweet Confection and made of sugar",
+      title: "Sugar Candy Sugar Candy Sugar Candy",
+      text: "Sweet Confection and made of sugar Sweet Confection and made of sugar",
       bg: "rgba(237, 201, 153,.5)",
       color: "#000",
     },
     feature2: {
-      title: "Chocolate",
-      text: "Mood of ground roasted coca bins",
+      title: "Chocolate Chocolate Chocolate  ",
+      text: "Mood of ground roasted coca bins Mood of ground roasted coca ",
       bg: " rgba(243, 168, 81, 0.8)",
       color: "#000",
     },

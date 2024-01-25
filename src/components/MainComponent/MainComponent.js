@@ -5,28 +5,64 @@ const MainComponent = ({
   heading,
   feature1,
   feature2,
-
+  feature3,
   fontFamily,
 }) => {
+  const calculateTextWidth = (text) => {
+    const textSize = text.length;
+    const baseSize = 500; // Default size
+    const maxSize = 1000; // Maximum size
+
+    // Adjust size based on text length
+    return Math.min(baseSize + textSize, maxSize);
+  };
+
+  const getMinWidth = () => {
+    const textElements = [
+      heading,
+      feature1.title,
+      feature1.text,
+      feature2.title,
+      feature2.text,
+    ];
+
+    // You can add more text elements to the array as needed
+
+    const widths = textElements.map((text) => calculateTextWidth(text));
+    return Math.max(...widths);
+  };
+
+  const minWidth = getMinWidth();
+
   return (
     <section className={styles.mainWrapper} style={{ fontFamily: fontFamily }}>
       <div className={styles.wrapper}>
-        <p className={styles.heading}>{heading}</p>
         <div
           className={[styles.leftCircle, styles.circle].join(" ")}
-          style={{ background: feature1.bg, color: feature1.color }}
+          style={{
+            background: feature1.bg,
+            color: feature1.color,
+            minWidth: minWidth,
+            height: minWidth,
+          }}
         >
           <h3 className={styles.title}>{feature1.title}</h3>
           <p className={styles.leftText}>{feature1.text}</p>
         </div>
         <div
           className={[styles.rightCircle, styles.circle].join(" ")}
-          style={{ background: feature2.bg }}
+          style={{
+            background: feature2.bg,
+            minWidth: minWidth,
+            height: minWidth,
+          }}
         >
-          <h3 className={styles.title}>{feature2.title}</h3>
-
+          <h3 className={[styles.title, styles.titleRight].join(" ")}>
+            {feature2.title}
+          </h3>
           <p className={styles.rightText}>{feature2.text}</p>
         </div>
+        <p className={styles.heading}>{heading}</p>
       </div>
     </section>
   );
