@@ -5,16 +5,15 @@ const MainComponent = ({
   heading,
   feature1,
   feature2,
-  feature3,
+
   fontFamily,
 }) => {
   const calculateTextWidth = (text) => {
     const textSize = text.length;
     const baseSize = 500; // Default size
-    const maxSize = 1000; // Maximum size
 
     // Adjust size based on text length
-    return Math.min(baseSize + textSize, maxSize);
+    return Math.min(baseSize + textSize);
   };
 
   const getMinWidth = () => {
